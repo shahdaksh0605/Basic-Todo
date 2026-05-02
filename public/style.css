@@ -1,0 +1,101 @@
+:root {
+    --primary: #6366f1;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --bg: #f8fafc;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                      radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    color: #1e293b;
+}
+
+.app-wrapper {
+    width: 100%;
+    max-width: 450px;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+h1 { font-weight: 800; margin-bottom: 24px; text-align: center; font-size: 2rem; }
+
+.input-box {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+.input-box:focus { border-color: var(--primary); outline: none; }
+
+.add-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.task-card {
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.task-card:hover { transform: translateY(-2px); }
+
+.task-text.done { text-decoration: line-through; opacity: 0.5; }
+
+.action-btns { display: flex; gap: 8px; }
+
+.icon-btn {
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-check { background: #dcfce7; color: var(--success); }
+.btn-del { background: #fee2e2; color: var(--danger); }
+
+.error-banner {
+    background: #fee2e2;
+    color: var(--danger);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}

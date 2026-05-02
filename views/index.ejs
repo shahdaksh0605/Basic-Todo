@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TaskFlow v2</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        <div class="glass-card">
+            <h1>TaskFlow</h1>
+
+            <% if (error) { %>
+                <div class="error-banner"><%= error %></div>
+            <% } %>
+
+            <form action="/add" method="POST">
+                <input type="text" name="title" class="input-box" placeholder="Task title..." required>
+                <input type="text" name="description" class="input-box" placeholder="Optional notes...">
+                <button type="submit" class="add-btn">Create Task</button>
+            </form>
+
+            <div class="list-container">
+                <% tasks.forEach(task => { %>
+                    <div class="task-card">
+                        <div class="task-info">
+                            <div class="task-text <%= task.completed ? 'done' : '' %>" style="font-weight: 600;">
+                                <%= task.title %>
+                            </div>
+                            <div style="font-size: 0.8rem; color: #64748b;"><%= task.description %></div>
+                        </div>
+
+                        <div class="action-btns">
+                            <% if (!task.completed) { %>
+                                <form action="/complete/<%= task._id %>" method="POST">
+                                    <button class="icon-btn btn-check">✓</button>
+                                </form>
+                            <% } %>
+                            <form action="/delete/<%= task._id %>" method="POST">
+                                <button class="icon-btn btn-del">✕</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
