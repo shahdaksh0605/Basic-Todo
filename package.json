@@ -1,0 +1,25 @@
+{
+  "name": "basic-todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahdaksh0605/Basic-Todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shahdaksh0605/Basic-Todo/issues"
+  },
+  "homepage": "https://github.com/shahdaksh0605/Basic-Todo#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.1"
+  }
+}
